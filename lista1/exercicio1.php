@@ -9,7 +9,7 @@
 
         public function calculaIdade(){
             $this->ano_nasc;
-            return "Idade: ". 2024 - $this->ano_nasc . " anos\n";
+            return "Idade: ". (2024 - $this->ano_nasc) . " anos\n";
         }
         public function informaIdade(){
             return $this->calculaIdade;
