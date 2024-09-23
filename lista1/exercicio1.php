@@ -16,7 +16,7 @@
         }
         public function informaNome(){
             $this->nome;
-            return "Nome: \n". $this->nome;
+            return "Nome: ". $this->nome. "\n";
         }
         public function ajustaDataDeNascimento(){
             $this->dia_nasc;

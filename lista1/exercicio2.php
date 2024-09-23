@@ -13,25 +13,31 @@ class Universidade{
     }
 
     public function informaFacul(){
-        return "Nome da Universidade: " . $this->nomeFacul;
+        return $this->nomeFacul;
     }
 }
 
 class Pessoa extends Universidade{
-    public $nome;
+    public $nome; 
+    private $universidade;
 
-    public function __construct($nome,$nomeFacul){
+    public function __construct($nome,Universidade $universidade){
         $this->nome = $nome;
-        $this->nomeFacul = $nomeFacul;
-        parent::informaFacul();
+        $this->universidade = $universidade;
 
     }
 
 
     public function apresentar() {
-        return "Olá, meu nome é {$this->nome} e a faculdade que eu estudo é {$this->nomeFacul}";
+        return "Olá, meu nome é {$this->nome} e a faculdade que trabalho é {$this->universidade->informaFacul()}\n";
     }
 }
 
-$aluno1 = new Pessoa("Rafa","Univille");
-$aluno1->apresentar();
+$universidade1 = new Universidade("UFSC");
+$universidade2 = new Universidade("Unicentro");
+
+$pessoa1 = new Pessoa("Rafael Amaral",$universidade1);
+$pessoa2 = new Pessoa("Rafaela Severo",$universidade2);
+
+echo $pessoa1->apresentar();
+echo $pessoa2->apresentar();
